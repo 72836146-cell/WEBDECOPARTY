@@ -1,15 +1,25 @@
 {
+  "cleanUrls": true,
   "headers": [
+    {
+      "source": "/Build/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/octet-stream"
+        }
+      ]
+    },
     {
       "source": "/Build/(.*).wasm",
       "headers": [
         {
           "key": "Content-Type",
           "value": "application/wasm"
-        },
-        {
-          "key": "Cache-Control",
-          "value": "max-age=31536000, immutable"
         }
       ]
     }
